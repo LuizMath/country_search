@@ -16,7 +16,7 @@ const CardCountry = ({
 }: Props): JSX.Element => {
   const navigate = useNavigate();
   return (
-    <Styles.Card onClick={() => navigate(`/${name}`)}>
+    <Styles.Card onClick={() => navigate(`/country_search/${name}`)}>
       <Styles.Flag src={flag} />
       <Styles.InformationsArea>
         <Styles.NameCountry>{name}</Styles.NameCountry>
