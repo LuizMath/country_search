@@ -13,7 +13,7 @@ const ReturnAndFlag = ({ srcFlag }: Props) => {
   const navigate = useNavigate();
   return (
     <Styles.MainSection>
-      <Styles.BackToHome onClick={() => navigate("/")}>
+      <Styles.BackToHome onClick={() => navigate("/country_search")}>
         <Styles.Icon
           src={themeContext.theme === "light" ? arrowLight : arrowDark}
         />

@@ -34,7 +34,7 @@ const BordersCountry = ({ borders }: Props) => {
           <Styles.ListBorders>
             {countriesBorder.map((border, _index) => (
               <Styles.ItemBorders
-                onClick={() => navigate(`/${border}`)}
+                onClick={() => navigate(`/country_search/${border}`)}
                 key={_index}
               >
                 {border}
