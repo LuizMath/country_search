@@ -17,8 +17,8 @@ const App = (): JSX.Element => {
         <Header />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/:name" element={<CountryDetail />} />
+            <Route path="/country_search" element={<Home />} />
+            <Route path="/country_search/:name" element={<CountryDetail />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
