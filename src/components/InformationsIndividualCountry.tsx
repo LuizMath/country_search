@@ -32,7 +32,7 @@ const InformationsIndividualCountry = ({
     setLanguagesArr(Object.values(languages));
   }, [languages]);
   return (
-    <Styles.MainSection>
+    <Styles.MainSection $borders={borders ? true : false}>
       <Styles.TitleName>{name}</Styles.TitleName>
       <Styles.ListInformation>
         <Styles.ItemInformation>

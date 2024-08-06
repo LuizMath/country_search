@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
-export const MainSection = styled.section`
+export const MainSection = styled.section<{ $borders: boolean }>`
   font-family: "Nunito Sans", sans-serif;
   color: ${(props) => props.theme.text};
   display: flex;
-  justify-content: space-evenly;
+  justify-content: ${(props) =>
+    props.$borders ? "space-evenly" : "flex-start"};
   flex-direction: column;
+  gap: ${(props) => (props.$borders ? "0px" : "80px")};
   height: 450px;
+  margin-top: ${(props) => (props.$borders ? "0px" : "70px")};
   @media screen and (max-width: 768px) {
     height: 650px;
   }

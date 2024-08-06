@@ -28,6 +28,7 @@ export const Title = styled.h1`
 
 export const Mode = styled.button`
   width: 120px;
+  padding: 5px 0px 0px 0px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -41,5 +42,6 @@ export const Mode = styled.button`
 
 export const Icon = styled.img`
   width: 30px;
+  height: 30px;
   margin-top: -2px;
 `;
