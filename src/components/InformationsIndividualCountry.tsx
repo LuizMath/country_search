@@ -33,7 +33,9 @@ const InformationsIndividualCountry = ({
   }, [languages]);
   return (
     <Styles.MainSection $borders={borders ? true : false}>
-      <Styles.TitleName>{name}</Styles.TitleName>
+      <Styles.TitleName $borders={borders ? true : false}>
+        {name}
+      </Styles.TitleName>
       <Styles.ListInformation>
         <Styles.ItemInformation>
           <Styles.TitleInformation>Native Name:</Styles.TitleInformation>

@@ -15,10 +15,13 @@ export const MainSection = styled.section<{ $borders: boolean }>`
   }
 `;
 
-export const TitleName = styled.h1`
+export const TitleName = styled.h1<{ $borders: boolean }>`
   font-size: 35px;
   font-weight: 800;
-  margin-top: -40px;
+  ${(props) =>
+    props.$borders
+      ? null
+      : "@media screen and (min-width: 1461px) { margin-top: 100px; }"}
 `;
 
 export const ListInformation = styled.ul`

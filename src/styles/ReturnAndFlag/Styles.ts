@@ -26,8 +26,8 @@ export const ImgArea = styled.div`
 `;
 
 export const Flag = styled.img`
-  max-width: 600px;
-  height: 450px;
+  max-width: 550px;
+  height: 400px;
   width: 100%;
   margin-top: 100px;
   @media screen and (max-width: 1000px) {
