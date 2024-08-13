@@ -274,8 +274,8 @@ to {
   display: flex;
   justify-content: center;
 `,ov=j.img`
-  max-width: 600px;
-  height: 450px;
+  max-width: 550px;
+  height: 400px;
   width: 100%;
   margin-top: 100px;
   @media screen and (max-width: 1000px) {
@@ -304,7 +304,7 @@ to {
 `,hv=j.h1`
   font-size: 35px;
   font-weight: 800;
-  margin-top: -40px;
+  ${e=>e.$borders?null:"@media screen and (min-width: 1461px) { margin-top: 100px; }"}
 `,mv=j.ul`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -352,7 +352,7 @@ to {
     flex-direction: column;
   }
   gap: 20px;
-`,xv=async e=>{const t=`${zo}alpha/${e}`;return await(await fetch(t,Lo("GET"))).json()},Sv=({borders:e})=>{const t=gs(),[n,r]=_.useState([]),l=async()=>{if(e!==null){const o=await Promise.all(e.filter(i=>e.indexOf(i)<3).map(async i=>await xv(i)));r(o.map(i=>i[0].name.common));return}};return _.useEffect(()=>{l()},[e]),E.jsx(E.Fragment,{children:e!==null?E.jsxs(wv,{children:[E.jsx(yv,{children:"Border Countries: "}),E.jsx(gv,{children:n.map((o,i)=>E.jsx(vv,{onClick:()=>t(`/country_search/${o}`),children:o},i))})]}):null})},kv=({region:e,subRegion:t,capital:n,currencies:r,topLevelDomain:l,languages:o,nativeName:i,population:u,name:s,borders:a})=>{const[h,f]=_.useState([]);return _.useEffect(()=>{f(Object.values(o))},[o]),E.jsxs(pv,{$borders:!!a,children:[E.jsx(hv,{children:s}),E.jsxs(mv,{children:[E.jsxs(vt,{children:[E.jsx(yt,{children:"Native Name:"}),i]}),E.jsxs(vt,{children:[E.jsx(yt,{children:"Top Level Domain:"}),l]}),E.jsxs(vt,{children:[E.jsx(yt,{children:"Population:"}),u.toLocaleString()]}),E.jsxs(vt,{children:[E.jsx(yt,{children:"Currencies:"}),r]}),E.jsxs(vt,{children:[E.jsx(yt,{children:"Region:"})," ",e]}),E.jsxs(vt,{children:[E.jsx(yt,{children:"Languages:"}),h.filter(m=>h.indexOf(m)<3).map(m=>m).toLocaleString()]}),E.jsxs(vt,{children:[E.jsx(yt,{children:"Sub Region:"}),t]}),E.jsxs(vt,{children:[E.jsx(yt,{children:"Capital:"})," ",n.toLocaleString()]})]}),E.jsx(Sv,{borders:a||null})]})},Ev=j.section`
+`,xv=async e=>{const t=`${zo}alpha/${e}`;return await(await fetch(t,Lo("GET"))).json()},Sv=({borders:e})=>{const t=gs(),[n,r]=_.useState([]),l=async()=>{if(e!==null){const o=await Promise.all(e.filter(i=>e.indexOf(i)<3).map(async i=>await xv(i)));r(o.map(i=>i[0].name.common));return}};return _.useEffect(()=>{l()},[e]),E.jsx(E.Fragment,{children:e!==null?E.jsxs(wv,{children:[E.jsx(yv,{children:"Border Countries: "}),E.jsx(gv,{children:n.map((o,i)=>E.jsx(vv,{onClick:()=>t(`/country_search/${o}`),children:o},i))})]}):null})},kv=({region:e,subRegion:t,capital:n,currencies:r,topLevelDomain:l,languages:o,nativeName:i,population:u,name:s,borders:a})=>{const[h,f]=_.useState([]);return _.useEffect(()=>{f(Object.values(o))},[o]),E.jsxs(pv,{$borders:!!a,children:[E.jsx(hv,{$borders:!!a,children:s}),E.jsxs(mv,{children:[E.jsxs(vt,{children:[E.jsx(yt,{children:"Native Name:"}),i]}),E.jsxs(vt,{children:[E.jsx(yt,{children:"Top Level Domain:"}),l]}),E.jsxs(vt,{children:[E.jsx(yt,{children:"Population:"}),u.toLocaleString()]}),E.jsxs(vt,{children:[E.jsx(yt,{children:"Currencies:"}),r]}),E.jsxs(vt,{children:[E.jsx(yt,{children:"Region:"})," ",e]}),E.jsxs(vt,{children:[E.jsx(yt,{children:"Languages:"}),h.filter(m=>h.indexOf(m)<3).map(m=>m).toLocaleString()]}),E.jsxs(vt,{children:[E.jsx(yt,{children:"Sub Region:"}),t]}),E.jsxs(vt,{children:[E.jsx(yt,{children:"Capital:"})," ",n.toLocaleString()]})]}),E.jsx(Sv,{borders:a||null})]})},Ev=j.section`
   width: 90%;
   margin: 100px auto;
   display: grid;
