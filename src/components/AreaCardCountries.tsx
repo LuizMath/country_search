@@ -14,6 +14,7 @@ type Props = {
 const AreaCardCountries = ({ region, country }: Props): JSX.Element => {
   const [loader, setLoader] = useState<boolean>(true);
   const [countries, setCountries] = useState<Country[]>([]);
+  const discao = "peladicão e chiluiu";
   const setCountriesInState = async () => {
     if (region) {
       setLoader(true);
