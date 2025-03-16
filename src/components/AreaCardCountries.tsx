@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import * as Styles from "../styles/AreaCardCountries/Styles";
 import CardCountry from "./CardCountry";
 import { Country } from "../types/Country";
-import { getAllCountry } from "../services/GetAllCountry";
-import { getRegionCountry } from "../services/GetRegionCountry";
+import { GetAllCountry } from "../services/GetAllCountry";
+import { GetRegionCountry } from "../services/GetRegionCountry";
 import Loader from "./Loader";
 import Error from "./Error";
 
@@ -15,16 +15,15 @@ type Props = {
 const AreaCardCountries = ({ region, country }: Props): JSX.Element => {
   const [loader, setLoader] = useState<boolean>(true);
   const [countries, setCountries] = useState<Country[]>([]);
-  const discao = "peladicão e chiluiu";
   const setCountriesInState = async () => {
     if (region) {
       setLoader(true);
-      const countries = await getRegionCountry(region);
+      const countries = await GetRegionCountry(region);
       setCountries(countries);
       setLoader(false);
     } else {
       setLoader(true);
-      const countries = await getAllCountry();
+      const countries = await GetAllCountry();
       setCountries(countries);
       setLoader(false);
     }
@@ -37,8 +36,8 @@ const AreaCardCountries = ({ region, country }: Props): JSX.Element => {
       {loader ? (
         <Loader />
       ) : countries.filter(({ name }) =>
-        name.common.toLowerCase().includes(country.toLowerCase())
-      ).length > 0 ? (
+          name.common.toLowerCase().includes(country.toLowerCase())
+        ).length > 0 ? (
         <Styles.Main>
           {countries
             .filter(({ name }) =>

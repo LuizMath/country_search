@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import ReturnAndFlag from "../components/ReturnAndFlag";
 import { useEffect, useState } from "react";
 import { Country } from "../types/Country";
-import { getIndividualCountry } from "../services/GetIndividualCountry";
+import { GetIndividualCountry } from "../services/GetIndividualCountry";
 import InformationsIndividualCountry from "../components/InformationsIndividualCountry";
 import * as Styles from "../styles/CountryDetail/Styles";
 
@@ -11,7 +11,7 @@ const CountryDetail = () => {
   const [country, setCountry] = useState<Country[]>([]);
 
   const setCountryInState = async () => {
-    const country = await getIndividualCountry(name?.toLowerCase() as string);
+    const country = await GetIndividualCountry(name?.toLowerCase() as string);
     setCountry(country);
   };
   useEffect(() => {

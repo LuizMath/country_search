@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import * as Styles from "../styles/BordersCountry/Styles";
-import { getAllCountryArray } from "../services/GetAllCountryArray";
+import { GetAllCountryCode } from "../services/GetAllCountryArray";
 import { useNavigate } from "react-router-dom";
 
 type Props = {
@@ -16,7 +16,7 @@ const BordersCountry = ({ borders }: Props) => {
         borders!
           .filter((border) => borders!.indexOf(border) < 3)
           .map(async (border) => {
-            return await getAllCountryArray(border);
+            return await GetAllCountryCode(border);
           })
       );
       setCountriesBorder(countries.map((country) => country[0].name.common));
