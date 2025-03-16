@@ -5,6 +5,7 @@ import { Country } from "../types/Country";
 import { getAllCountry } from "../services/GetAllCountry";
 import { getRegionCountry } from "../services/GetRegionCountry";
 import Loader from "./Loader";
+import Error from "./Error";
 
 type Props = {
   region: "Africa" | "America" | "Oceania" | "Europe" | "Asia";
@@ -36,8 +37,8 @@ const AreaCardCountries = ({ region, country }: Props): JSX.Element => {
       {loader ? (
         <Loader />
       ) : countries.filter(({ name }) =>
-          name.common.toLowerCase().includes(country.toLowerCase())
-        ).length > 0 ? (
+        name.common.toLowerCase().includes(country.toLowerCase())
+      ).length > 0 ? (
         <Styles.Main>
           {countries
             .filter(({ name }) =>
@@ -55,7 +56,7 @@ const AreaCardCountries = ({ region, country }: Props): JSX.Element => {
             ))}
         </Styles.Main>
       ) : (
-        <p>Não Há um pais com esse nome!</p>
+        <Error />
       )}
     </>
   );
